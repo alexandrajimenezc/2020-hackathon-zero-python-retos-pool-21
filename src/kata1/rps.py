@@ -1,23 +1,26 @@
 from random import randint
 
-options = ["Piedra", "Papel", "Tijeras"]
-
-# El resultado de salida son las siguientes String
-#'Empate!'
-#'Ganaste!'
-#'Perdiste!'
 def quienGana(player, ai):
-    return ""
-
-# Entry Point
+    
+    if player == ai :      
+        return 'Empate!' 
+    elif (player== 'Tijeras' and ai =='Papel') or (player== 'Piedra' and ai== 'Tijeras') or (player == 'Papel' and ai == 'Piedra'):
+        return 'Ganaste!'   
+    else:
+        return 'Perdiste!'
+  
+  
 def Game():
-    #
-    #
-    
-    #
-    #
-    
-    winner = quienGana(player, ai)
 
+    mi_entrada = 'input("Escribe Piedra papel o tijeras")'
+    player = mi_entrada.lower().capitalize()
+    options = ["Piedra", "Papel", "Tijeras"]
+    ai = options[randint(0,2)]
+    ai=ai.lower().capitalize()
+    print(player)
+    print(ai )
+    winner = quienGana(player, ai)
     print(winner)
+    
+Game()
 
